@@ -4,7 +4,7 @@
 
 ## Students
 
-1. is studentu masyvo infomracijos sugeneruoti korteles htmle. korteles turi tureti apvada ir visa su studentu susijusia info. korteles turi tilpti 3 per puslapio ploti.
+1. su funkcija is studentu masyvo infomracijos sugeneruoti korteles htmle. korteles turi tureti apvada ir visa su studentu susijusia info. korteles turi tilpti 3 per puslapio ploti.
 
 ```html
 <div class="stud-card">
@@ -14,4 +14,4 @@
 </div>
 ```
 
-2.
+2. extra.js
