@@ -1,26 +1,59 @@
 'use strict';
 console.log('pr1.js file was loaded');
 
-// data
+const students = [
+  {
+    name: 'James',
+    gender: 'male',
+    age: 25,
+    town: 'Vilnius',
+    hasCar: true,
+  },
+  {
+    name: 'Jill',
+    gender: 'female',
+    age: 28,
+    town: 'Kaunas',
+    hasCar: true,
+  },
+  {
+    name: 'Mike',
+    gender: 'male',
+    age: 18,
+    town: 'Kaunas',
+    hasCar: false,
+  },
+  {
+    name: 'Jane',
+    gender: 'female',
+    age: 22,
+    town: 'Klaipeda',
+    hasCar: false,
+  },
+  {
+    name: 'Jannet',
+    gender: 'female',
+    age: 29,
+    town: 'Klaipeda',
+    hasCar: true,
+  },
+  {
+    name: 'Cory',
+    gender: 'male',
+    age: 30,
+    town: 'Siauliai',
+    hasCar: true,
+  },
+  {
+    name: 'Minks',
+    gender: 'male',
+    age: 19,
+    town: 'Siauliai',
+    hasCar: false,
+  },
+];
 
-const nowObj = new Date();
-console.log('nowObj ===', nowObj);
-console.log('+nowObj ===', +nowObj);
-console.log('nowObj ===', nowObj.getFullYear());
-console.log('nowObj ===', nowObj.getMonth() + 1);
-console.log('nowObj ===', nowObj.getDate());
-console.log('nowObj ===', nowObj.toISOString());
-console.log('nowObj ===', nowObj.toLocaleDateString());
-console.log('nowObj ===', nowObj.toLocaleTimeString());
-
-// date.toLocaleString('kalba', {papildomi nustatymai})
-
-const niceDate = nowObj.toLocaleString('lt-LT', {
-  timeStyle: 'full',
-  dateStyle: 'full',
-});
-const niceTime = nowObj.toLocaleString('lt-LT', { timeStyle: 'medium' });
-console.log('niceDate ===', niceDate);
-console.log('niceTime ===', niceTime);
-
-// patalpinti data i <h2 id="date"></h2>
+// st1. sugeneruoti studentu nerikiuota sarasa htmle kuriame butu studentu vardai
+// st2. Parasyti funkcija, kuriai paduodam miesta kaip argumenta ir ji atrenka studentus is to miesto
+// st3. Parasyti funkcija, kuriai paduodam amziu kaip argumenta ir ji atrenka studentus kuriu amzius didesnis uz argumenta.
+// st4. prie st1 sugeneruoto saraso pridedam mygtuka su textu 'delete'. mygtuka paspaudus istiname ta li el kuriame yra paspaustas mygtukas
