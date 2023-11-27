@@ -65,6 +65,8 @@ const els = {
   studentsList: document.getElementById('students'),
   allStdBtn: document.getElementById('btn1'),
   siauliaiBtn: document.getElementById('btn2'),
+  sortBtn: document.getElementById('btn3'),
+  townSelectEl: document.getElementById('town'),
 };
 console.log('els ===', els);
 // students.forEach((studObj) => {
@@ -138,7 +140,22 @@ function getStudAbove(amzius) {
 getStudAbove(25);
 
 // <select id="town">
-// kai ivyks miesto pasirinkimas
-// mes norim atspausdinti studentu is to miesto
+els.townSelectEl.addEventListener('change', () => {
+  // kai ivyks miesto pasirinkimas
+  // miestas yra selecto value
+  const pasirinktasMiestas = els.townSelectEl.value;
+  console.log('pasirinktasMiestas ===', pasirinktasMiestas);
+  // mes norim atspausdinti studentu is to miesto
+  const atrinkti = getStudenstByTown(pasirinktasMiestas);
+  generateStudHtml(atrinkti);
+});
+
+// isrikiuoti pagal varda
+els.sortBtn.addEventListener('click', () => {
+  // isrikiuoti studentus
+  students.sort((aObj, bObj) => aObj.name.localeCompare(bObj.name));
+  console.table(students);
+  generateStudHtml(students);
+});
 
 // st4. prie st1 sugeneruoto saraso pridedam mygtuka su textu 'delete'. mygtuka paspaudus istiname ta li el kuriame yra paspaustas mygtukas
