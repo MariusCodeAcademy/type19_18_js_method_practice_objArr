@@ -88,12 +88,25 @@ function generateStudHtml() {
     const liEl = document.createElement('li');
     // prideti varda ir miesta
     liEl.textContent = `Vardas:${studObj.name}, Miestas: ${studObj.town} amzius: ${studObj.age}`;
-    console.log('liEl ===', liEl);
+    // console.log('liEl ===', liEl);
     // ideti li i ul
     els.studentsList.append(liEl);
+    // 2. generateStudHtml() sudeda i html ne students elementus bet argumentu gauta masyva
   });
 }
 generateStudHtml();
+
 // st2. Parasyti funkcija, kuriai paduodam miesta kaip argumenta ir ji atrenka studentus is to miesto
+function getStudenstByTown(argTown) {
+  const atrikti = students.filter((studObj) => studObj.town === argTown);
+  console.table(atrikti);
+  // 1. funkcija grazina atrinktus studentus
+}
+getStudenstByTown('Klaipeda');
+// 3. su generateStudHtml atspaudinti atrinktus studentus
+//
+//
+//
+//
 // st3. Parasyti funkcija, kuriai paduodam amziu kaip argumenta ir ji atrenka studentus kuriu amzius didesnis uz argumenta.
 // st4. prie st1 sugeneruoto saraso pridedam mygtuka su textu 'delete'. mygtuka paspaudus istiname ta li el kuriame yra paspaustas mygtukas
