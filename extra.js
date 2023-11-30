@@ -1,3 +1,36 @@
+// studentsArr
+// studObj
+// studModArr
+// modObj
+// marksArr - getAvg
+//
+
+const marks = [10, 7, 7, 6, 9];
+/**
+ *
+ * @param {Array} arr
+ * @returns
+ */
+function getAvg(arr) {
+  let total = 0;
+  arr.forEach((sk) => {
+    total += sk;
+  });
+  return total / arr.length;
+}
+
+getAvg(marks);
+
+const modObj = {
+  title: 'Operacinės sistemos',
+  credits: 6,
+  marks: [10, 7, 7, 6, 9],
+};
+
+function getSingleModAvg(oneModObj) {
+  return getAvg(oneModObj.marks);
+}
+
 const students = [
   {
     name: 'Panatėja',
@@ -198,6 +231,27 @@ const students = [
     ],
   },
 ];
+function getAvgFromModulesArr(arr) {
+  let st1ModAvgArr = arr.map(getSingleModAvg);
+  let st1ModAvg = getAvg(st1ModAvgArr);
+  return st1ModAvg;
+}
+let st1ModAvgArr = students[0].modules.map(getSingleModAvg);
+console.log('st1ModAvgArr ===', st1ModAvgArr);
+let st1ModAvg = getAvg(st1ModAvgArr);
+console.log('st1ModAvg ===', st1ModAvg);
+
+const nums = [1, 2, 3, 4];
+//         1/3 + 2/3 + 3/3
+const numsAvg = nums.reduce((total, sk, _idx, arr) => {
+  return total + sk / arr.length;
+}, 0);
+const numsAvgSingle = nums.reduce(
+  (total, sk, idx, arr) => total + sk / arr.length,
+  0
+);
+console.log(' numsAvg ===', numsAvg);
+console.log('numsAvgSingle ===', numsAvgSingle);
 /*
   1. Peržvelgti students masyvą, jeigu patogu susibraižyti ant lapo duoenų struktūras, kad būtų aiškiau kas kam priklauso.
   2. Peržiūrėti duomenis naršyklės konsolėje, jie pateikti naudojant console.table
